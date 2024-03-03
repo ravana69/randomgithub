@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Github ID</title>
+  
+  <style>
+    body {
+      background: #181818;
+      color: #ddd;  
+    }
+    
+    button {
+      padding: 12px 24px;
+      border-radius: 8px; 
+      border: none;
+      background: #30475e;   
+      color: #f05454;
+      font-size: 16px;
+      cursor: pointer;  
+    }
+  </style>
+  
+</head>
+
+<body>
+
+  <button onclick="generateRandomURL()">Generate Image</button>
+  
+  <img id="github-image" width="400">
+  
+  <p id="result-url" style="font-family:sans-serif; margin-top:12px"></p>
+
+  <script>
+    
+    function generateRandomURL() {
+    
+      const min = 1;
+      const max = 162000000;  
+    
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+      const url = `https://avatars.githubusercontent.com/u/${randomNumber}`;
+      
+      let img = document.getElementById("github-image");
+      img.src = url;
+
+      let resultParagraph = document.getElementById("result-url");
+      resultParagraph.innerText = url;
+      
+    }
+
+  </script>
+
+</body>  
+</html>
